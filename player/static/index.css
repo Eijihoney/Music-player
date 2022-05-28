@@ -1,0 +1,99 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.info{
+    margin: 5% 5%;
+    padding: 1% 1%;
+    color: #fff;
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+body{
+    background: url("Images/background-jazz.jpg");
+    background-color: linear-gradient(to top, #FF0000, #0000FF) no-repeat;
+    font-family: 'Prompt', sans-serif;
+    /* font-family: 'Montserrat Alternates', sans-serif; */
+}
+.image{
+    width: 1000px;
+    height: 1000px;
+}
+.form-group{
+    padding: 5px;
+    font-size: 15px;
+}
+.card{
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+#img{
+    background-image: url('https://images.unsplash.com/photo-1450044804117-534ccd6e6a3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+  }
+.main{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer{
+   
+    padding-top: 10px;
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+.song{
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 1%;
+    padding-top: 10px ;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    color: blanchedalmond;
+    background: rgba(238, 238, 238, 0.3);
+}
+.social-links{
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 1.4rem;
+
+}
+.social-links a{
+
+    border: 2px solid #fff;
+
+    color: #fff;
+
+    display: block;
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    margin: 0 0.3rem;
+
+}
+
+.social-links a:hover{
+
+    background: #fff;
+
+    color: var(--exDark);
+
+}

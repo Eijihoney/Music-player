@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.user }}
+    {{ form.songs }}
+    <input class="btn" type="submit" name="Create User" value="Sign In">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for playlist in playlists  %}
+        <a href="playlists/{{playlist.title}}">playlist.title</a>
+    {% endfor %}
+</body>
+</html>

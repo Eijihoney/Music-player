@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+    {% load static %}
+    <link href="{% static 'signup.css' %}" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body onload="setdate()">
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="sign__box">
+	<h1>Create your Account</h1>
+	<div class="container">
+		<div class="personal">
+			<h3>Personal Information</h3>
+			<div class="textbox">
+				<i class="fas fa-user"></i>
+                {{ form.first_name }}
+{#				<input type="text" placeholder="First name">#}
+			</div>
+
+
+			<div class="textbox">
+				<i class="fas fa-user"></i>
+				{{ form.last_name }}
+			</div>
+
+			<div class="textbox">
+				<i class="fas fa-envelope"></i>
+				{{ form.email }}
+			</div>
+
+			<div class="choose">
+				<select class="select">
+					<option value="0">City</option>
+					<option value="1">Astana</option>
+					<option value="2">Almaty</option>
+					<option value="3">Shymkent</option>
+					<option value="4">Turkestan</option>
+					<option value="5">Taraz</option>
+					<option value="6">Semey</option>
+					<option value="7">Aqtobe</option>
+					<option value="8">Zhezqazgan</option>
+					<option value="9">Oral</option>
+				</select><br>
+				<input type="date" name="Birhday" value="Birhday"><br>
+			</div>
+
+			<div class="gender">
+				<label class="gen">Male
+					<input type="radio" name="gender">
+				<label class="gen">Female
+					<input type="radio" name="gender">
+			</div>
+		</div>
+
+		<div class="account">
+			<h3> Account Information</h3>
+			<div class="textbox">
+				<i class="fas fa-user"></i>
+				{{ form.username }}
+			</div>
+
+			<div class="textbox">
+				<i class="fas fa-key"></i>
+				{{ form.password1 }}
+			</div>
+
+			<div class="textbox">
+				<i class="fas fa-key"></i>
+				{{ form.password2 }}
+			</div>
+
+			<div class="check">
+				<input type="checkbox">
+				<label>Accept the terms and policies</label>
+			</div>
+			<input class="btn" type="submit" name="Create User" value="Sign In">
+		</div>
+	</div>
+        {{ form.errors}}
+
+        <a href="{% url 'player:login' %}">log in</a>
+</div>
+</form>
+
+
+
+<!-- <script type="text/javascript">
+	function setdate(){
+        var today = new Date();
+    	var dd = today.getDate();
+    	var mm = today.getMonth()+1; //January is 0!
+    	var yyyy = today.getFullYear();
+     	if(dd<10){
+           	dd='0'+dd
+        } 
+        if(mm<10){
+           	mm='0'+mm
+        } 
+   		today = yyyy+'-'+mm+'-'+dd;
+   		document.getElementById("1").setAttribute("max", today);
+	}
+</script> -->
+
+</body>
+</html>

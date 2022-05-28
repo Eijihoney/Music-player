@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    {% load static %}
+    <link href="{% static 'login.css' %}" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<title>Login</title>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="login-box">
+	<h1>Login</h1>
+    <form method="POST", action="">
+        {% csrf_token %}
+
+	<div class="form">
+		<ul id="form-messages">
+		</ul>
+	</div>
+	<div class="textbox">
+		<i class="fas fa-user"></i>
+		<input type="text" id="username" placeholder="Username" name="username" value="">
+	</div>
+
+	<div class="textbox">
+		<i class="fas fa-lock"></i>
+		<input type="password" id="password" placeholder="Password" name="password" value="">
+	</div>
+    <input class="btn" type="submit" name="Log in" value="Sign In">
+{#	<button class="btn" id="btn-submit" onclick="login()" name="" >Sign In#}
+{#	</button>#}
+    </form>
+    {% for message in messages %}
+
+        <p>{{ message }}</p>
+
+    {% endfor %}
+
+	<div class="signup">
+		Don't have account?  <a href="{% url 'player:signup' %}"> Sign Up</a>
+	</div>
+</div>
+
+<script>
+	function login(){
+		var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+	  	    	document.getElementById("form-messages").innerHTML =
+	        	this.responseText;
+	     	}
+	    };
+	    xhttp.open("POST", "ajax-info.txt", true);
+	    xhttp.send();
+	};
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
